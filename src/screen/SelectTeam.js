@@ -3,84 +3,74 @@ import Background from '../image/background_select.jpg'
 import {
     Link
   } from "react-router-dom";
+import axios from 'axios'
+import Cards from '../components/Cards'
+import quotes from '../Quotes.json'
 
 import './SelectTeam.css';
 
-export default function SelectTeam() {
+export default class SelectTeam extends React.Component{
+    state = {
+        characters: [],
+        cardIdSelected: [],
+        cardId:[],
+    };
+        
+    componentDidMount() {
+        axios
+        .get("https://miadil.github.io/starwars-api/api/all.json")
+        .then((res) => this.setState({ characters: res.data }));
+    }
+
+    addOnClick = (id) => {
+        const newCards = this.state.characters.filter(card => (card.id === id ))
+        this.setState({cardId: newCards})
+    }
     
-    return (
-            <div className='fullPage' >
-                <div className="titleSelect">
-                    Choose your hero
-                </div>
-                <div className='selectHero'>
-                    <div className='card'>
-                        Card
+
+    render(){
+        const { characters } = this.state
+        const tab10 = []
+        characters.map(character => quotes.map(quote => character.id === quote.id ? (
+            character['attack'] = quote.attack,
+            character['defense'] = quote.defense,
+            tab10.push(character)
+        ) : null  ))
+
+
+        return (
+            <div>
+                <div className='fullPage' >
+                    <div className="titleSelect">
+                        Choose your hero
                     </div>
-                    <div className='card'>
-                        Card1
+                    <div className='selectHero'>
+                        {
+                        tab10.map(card =>
+                        <Cards {...card} 
+                        key={card.id} 
+                        addClickHandler = {this.addOnClick.bind(this, card.id)}/>)
+                        }
                     </div>
-                    <div className='card'>
-                        Card2
+                    <div className='selectTitleHero'>
+                        Your Hero
                     </div>
-                    <div className='card'>
-                        Card3
+                    <div className='selectedHero'>
+                        <div>
+                        {
+                        this.state.cardId.map((card)=> <Cards {...card} key={card.id}/>)
+                        
+                        }
+                        {console.log(this.state.cardId)}
+                        </div>
                     </div>
-                    <div className='card'>
-                        Card4
+                    <div className='enterFight'>
+                        <Link to="/fight">
+                            <button>Time to fight</button>
+                        </Link>
                     </div>
-                    <div className='card'>
-                        Card5
-                    </div>
-                    <div className='card'>
-                        Card
-                    </div>
-                    <div className='card'>
-                        Card1
-                    </div>
-                    <div className='card'>
-                        Card2
-                    </div>
-                    <div className='card'>
-                        Card3
-                    </div>
-                    <div className='card'>
-                        Card4
-                    </div>
-                    <div className='card'>
-                        Card5
-                    </div>
-                </div>
-                <div className='selectTitleHero'>
-                    Your Hero
-                </div>
-                <div className='selectedHero'>
-                    <div className='card'>
-                        Card1 selected
-                    </div>
-                    <div className='card'>
-                        Card2 selected
-                    </div>
-                    <div className='card'>
-                        Card3 selected
-                    </div>
-                    <div className='card'>
-                        Card4 selected
-                    </div>
-                    <div className='card'>
-                        Card5 selected
-                    </div>
-                    <div className='card'>
-                        Card6 selected
-                    </div>
-                </div>
-                <div className='enterFight'>
-                    <Link to="/fight">
-                        <button>Time to fight</button>
-                    </Link>
                 </div>
             </div>
-    )
+        )
+    }
 }
-
-
