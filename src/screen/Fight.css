@@ -1,0 +1,45 @@
+.titleFight{
+    text-align: center;
+}
+.positionArea {
+    display:flex;
+    justify-content:center;
+}
+.fightArea {
+    display: flex;
+    justify-content: center;
+    border:solid 1px black;
+    width: 90%;
+    height: 400px;
+    align-items: center;
+}
+.PareaCardButton{
+    display: flex;
+    justify-content: center;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.areaCardButton{
+    display: flex;
+    align-items: center;
+}
+.cardAttack{
+    border:solid 1px black;
+    width:150px;
+    height: 300px;
+    margin: 60px;
+
+}
+.cardDefense{
+    border:solid 1px black;
+    width:150px;
+    height: 300px;
+    margin: 60px;
+}
+
+.fightHero{
+    display: flex;
+}
+button{
+    margin: 20px;
+}

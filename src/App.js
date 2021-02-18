@@ -1,13 +1,27 @@
-import './App.css';
 import React from 'react'
-import CardList from './screen/CardsList'
+import SelectTeam from './screen/SelectTeam'
+import './App.css';
+import Background from './image/background_select.jpg'
+import Fight from './screen/Fight'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './screen/Home'
 
 function App() {
   return (
-    <div className="App">
-      <CardList />
-    </div>
-  );
+    <Router>
+      <div className="App">
+        <CardList />
+        <Route exact path="/" component={Home} />
+        <Route path="/selectteam" component={SelectTeam} />
+        <Route path="/fight" component={Fight} />
+      </div>
+    </Router>
+  )
 }
 
 export default App;
