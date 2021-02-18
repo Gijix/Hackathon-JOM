@@ -1,0 +1,33 @@
+.fullPage {
+    background-color: grey;
+}
+
+.titleSelect{
+    width:150px;
+    border: 1px solid red;
+    text-align: center;
+}
+.selectTitleHero{
+    text-align: center;
+    width:150px;
+    border: 1px solid red;
+}
+.card {
+    width: 100px;
+    height: 200px;
+    border: solid 1px black;
+}
+.selectHero {
+    display: grid;
+    grid-template-columns: repeat(6, 2fr);
+}
+
+.selectedHero {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+.enterFight {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
