@@ -1,0 +1,23 @@
+
+.body {
+    background: ./img/background_select.eps;
+}
+
+.titleSelect{
+    border: 1px solid red;
+}
+
+.card {
+    width: 100px;
+    height: 200px;
+    border: solid 1px black;
+}
+.selectHero {
+    display: grid;
+    grid-template-columns: repeat(6, 2fr);
+}
+
+.selectedHero {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
