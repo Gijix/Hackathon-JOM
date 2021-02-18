@@ -15,6 +15,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <CardList />
         <Route exact path="/" component={Home} />
         <Route path="/selectteam" component={SelectTeam} />
         <Route path="/fight" component={Fight} />
