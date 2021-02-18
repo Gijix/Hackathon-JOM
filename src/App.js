@@ -1,19 +1,9 @@
 import React from 'react'
-<<<<<<< HEAD
-import CardList from './screen/CardsList'
-import Header from './components/Header'
-
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <CardList />
-    </div>
-  );
-=======
 import SelectTeam from './screen/SelectTeam'
 import './App.css';
 import Background from './image/background_select.jpg'
+import Header from './components/Header'
+import CardList from './screen/CardsList'
 import Fight from './screen/Fight'
 import {
   BrowserRouter as Router,
@@ -27,6 +17,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Header />
         <CardList />
         <Route exact path="/" component={Home} />
         <Route path="/selectteam" component={SelectTeam} />
@@ -34,7 +25,6 @@ function App() {
       </div>
     </Router>
   )
->>>>>>> 0add062b9696b05943a4813d268d2e5282c56db6
 }
 
 export default App;
