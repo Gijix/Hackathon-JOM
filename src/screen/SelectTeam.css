@@ -19,7 +19,7 @@
 }
 .selectHero {
     display: grid;
-    grid-template-columns: repeat(6, 2fr);
+    grid-template-columns: repeat(5, 2fr);
 }
 
 .selectedHero {
@@ -30,4 +30,21 @@
     display: flex;
     justify-content:center;
     align-items: center;
+}
+.Cards{
+    background-color: blue;
+    border: solid ;
+    border-color: black;
+    width: 150px;
+    height: 300px;
+    text-align: center;
+    margin: 20px;
+}
+img {
+    width:60px ;
+    height: 60px;
+}
+
+.cardbutton {
+    display: flex;
 }

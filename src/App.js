@@ -3,7 +3,6 @@ import SelectTeam from './screen/SelectTeam'
 import './App.css';
 import Background from './image/background_select.jpg'
 import Header from './components/Header'
-import CardList from './screen/CardsList'
 import Fight from './screen/Fight'
 import {
   BrowserRouter as Router,
@@ -18,7 +17,6 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <CardList />
         <Route exact path="/" component={Home} />
         <Route path="/selectteam" component={SelectTeam} />
         <Route path="/fight" component={Fight} />
