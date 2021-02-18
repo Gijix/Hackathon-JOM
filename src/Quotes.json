@@ -1,61 +1,71 @@
 [
     {
         "id": 5,
-        "attaque":"J'aimerais bien ressentir ta force en moi ",
-        "défense": "Hum c'est un sabre laser dans ta poche ou tu es juste content de me voir..?"
+        "name": "Leia Organa",
+        "attack":"J'aimerais bien ressentir ta force en moi ",
+        "defense": "Hum c'est un sabre laser dans ta poche ou tu es juste content de me voir..?"
     },
 
     {
         "id": 55,
-        "attaque":"Quand je te vois, c'est la carbonite au fond de ma culotte",
-        "défense": "Je ne suis pas intéressé par ton baby-yoda"
+        "name": "Adi Gallia",
+        "attack":"Quand je te vois, c'est la carbonite au fond de ma culotte",
+        "defense": "Je ne suis pas intéressé par ton baby-yoda"
     },
 
     {
         "id": 61,
-        "attaque":"tu t'appellerais pas Anakin ? Parce que tu es l'élu de mon coeur",
-        "défense": "Je préfère encore embrasser un wokie"
+        "name": "Cordé",
+        "attack":"tu t'appellerais pas Anakin ? Parce que tu es l'élu de mon coeur",
+        "defense": "Je préfère encore embrasser un wokie"
     },
 
     {
         "id": 46,
-        "attaque":"Pas besoin d'être un jedi pour avoir envie de manier ton sabre laser",
-        "défense": "Tu rayonnes autant que l'étoile noire"
+        "name": "Mon Mothma",
+        "attack":"Pas besoin d'être un jedi pour avoir envie de manier ton sabre laser",
+        "defense": "Tu rayonnes autant que l'étoile noire"
     },
 
     {
         "id": 65,
-        "attaque":"Depuis que je t'ai vue, je sais que ne veux pas finir comme Han ... Solo !",
-        "défense": "T'es aussi original qu'un Stormtrooper"
+        "name": "Beru Whitesun lars",
+        "attack":"Depuis que je t'ai vue, je sais que ne veux pas finir comme Han ... Solo !",
+        "defense": "T'es aussi original qu'un Stormtrooper"
     },
 
     {
         "id": 10,
-        "attaque":"Salut jeune demoiselle, on m'appelle Obi-Wan KenMoiBien!",
+        "name": "Obi-Wan Kenobi",
+        "attack":"Salut jeune demoiselle, on m'appelle Obi-Wan KenMoiBien!",
         "défense": "Je ne suis pas le père de Luke, mais je veux bien être ton sugar-daddy"
     },
 
     {
         "id": 13,
-        "attaque":"Ton ewok dans mon wookie ?",
-        "défense": "Je ne viendrai jamais du côté obscur, vous avez échoué votre altesse!"
+        "name": "Chewbacca",
+        "attack":"Ton ewok dans mon wookie ?",
+        "defense": "Je ne viendrai jamais du côté obscur, vous avez échoué votre altesse!"
     },
 
     {
         "id": 21,
-        "attaque":"Je vais te faire crier comme Chewbacca",
-        "défense": "J'ai un mauvais pressentiment..."
+        "name": "Palpatine",
+        "attack":"Je vais te faire crier comme Chewbacca",
+        "defense": "J'ai un mauvais pressentiment..."
     },
 
     {
         "id": 52,
-        "attaque":"Hé miss, tu t'appellerais pas Leia ? Parce que j'ai envie de faire de toi ma princesse",
-        "défense": "C'est sûrement un piège..!"
+        "name": "Ki-Adi-Mundi",
+        "attack":"Hé miss, tu t'appellerais pas Leia ? Parce que j'ai envie de faire de toi ma princesse",
+        "defense": "C'est sûrement un piège..!"
     },
 
     {
         "id": 51,
-        "attaque":"Mon X-Wing dans ton étoile noire ?",
-        "défense": "Non merci le tas de ferrailles fera l'affaire!"
+        "name": "Mace Windu",
+        "attack":"Mon X-Wing dans ton étoile noire ?",
+        "defense": "Non merci le tas de ferrailles fera l'affaire!"
     }
 ]
