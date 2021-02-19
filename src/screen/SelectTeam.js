@@ -6,16 +6,18 @@ import {
 import axios from 'axios'
 import Cards from '../components/Cards'
 import quotes from '../Quotes.json'
+import CardsSelected from '../components/CardsSelected'
 
 import './SelectTeam.css';
+
+   
 
 export default class SelectTeam extends React.Component{
     state = {
         characters: [],
-        cardIdSelected: [],
         cardId:[],
     };
-        
+    
     componentDidMount() {
         axios
         .get("https://miadil.github.io/starwars-api/api/all.json")
@@ -27,7 +29,6 @@ export default class SelectTeam extends React.Component{
         this.setState({cardId: newCards})
     }
     
-
     render(){
         const { characters } = this.state
         const tab10 = []
@@ -39,38 +40,43 @@ export default class SelectTeam extends React.Component{
 
 
         return (
-            <div>
-                <div className='fullPage' >
-                    <div className="titleSelect">
-                        Choose your hero
-                    </div>
-                    <div className='selectHero'>
-                        {
-                        tab10.map(card =>
-                        <Cards {...card} 
-                        key={card.id} 
-                        addClickHandler = {this.addOnClick.bind(this, card.id)}/>)
-                        }
-                    </div>
-                    <div className='selectTitleHero'>
-                        Your Hero
-                    </div>
-                    <div className='selectedHero'>
-                        <div>
-                        {
-                        this.state.cardId.map((card)=> <Cards {...card} key={card.id}/>)
-                        
-                        }
-                        {console.log(this.state.cardId)}
-                        </div>
-                    </div>
-                    <div className='enterFight'>
-                        <Link to="/fight">
-                            <button>Time to fight</button>
-                        </Link>
-                    </div>
-                </div>
-            </div>
+          <div>
+          	<div className='fullPage' >
+          	  <div className="titleSelect">
+          	      Choose your hero
+          	  </div>
+          	  <div className='selectHero'>
+          	    {
+          	      tab10.map(card =>
+          	      <Cards {...card} 
+          	      key={card.id} 
+          	      addClickHandler = {this.addOnClick.bind(this, card.id)}/>)
+          	     }
+          	  </div>
+          	  <div className='selectTitleHero'>
+          	      Your Hero
+          	  </div>
+          	  <div className='selectedHero'>
+          	    <div>
+          	      {
+          	        this.state.cardId.map((card)=> <CardsSelected {...card} key={card.id}/>)
+          	      }
+          	    {console.log(this.state.cardId)}
+          	    </div>
+          	  </div>
+          	  <div className='enterFight'>
+          	    <Link to={{
+						pathname: '/fight',
+							data: {
+							cardId: this.state.cardId
+							}
+								}
+								}>
+          	      <button>Time to fight</button>
+          	    </Link>
+          	  </div>
+          	</div>
+          </div>
         )
     }
 }

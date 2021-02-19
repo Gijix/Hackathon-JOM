@@ -1,11 +1,31 @@
 import React from 'react'
-import {
-    Link
-  } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './Fight.css'
+import CardsSelected from '../components/CardsSelected'
+import CardsFightSelected from '../components/CardsFightSelected'
 
-export default function Fight() {
-    return (
+export default class Fight extends React.Component { 
+    state = {
+        cardFight: [],
+        loading: true,
+    };
+    componentDidMount() {
+        this.setState({cardFight: this.props , loading: false})
+        // setTimeout(() => {
+        //   this.setState({loading: false})  
+        // }, 1000);
+    }
+    
+    
+    render (){
+        const {cardFight} = this.state
+       // console.log(this.props.location.data.cardId.name[0])
+
+    return this.state.loading ? (
+        <div>Loading</div>
+    )
+    :
+    (
         <div>
             <h1 className='titleFight'>
                 Fight
@@ -31,32 +51,19 @@ export default function Fight() {
                         </Link>
                     </div>
                     <div className='fightHero'>
-                        <div className='card'>
-                            Card1 selected
-                        </div>
-                        <div className='card'>
-                            Card2 selected
-                        </div>
-                        <div className='card'>
-                            Card3 selected
-                        </div>
-                        <div className='card'>
-                            Card4 selected
-                        </div>
-                        <div className='card'>
-                            Card5 selected
-                        </div>
-                        <div className='card'>
-                            Card6 selected
-                        </div>
-                    </div>
+                        {
+                        this.props.location.data.cardId.map((card)=> <CardsFightSelected {...card} key={card.id}/>)
+                        }
+                    </div>    
                     <div className='backButton'>
-                    <Link to='/selectteam'>
-                        <button>Back</button>
-                    </Link>
+                        <Link to='/selectteam'>
+                            <button>Back</button>
+                        </Link>
                     </div>
                 </div>
             </div>
-        </div>
-    )
+        </div>    
+        )
+    }
+
 }
