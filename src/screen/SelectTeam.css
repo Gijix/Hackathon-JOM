@@ -6,11 +6,12 @@
     width:150px;
     border: 1px solid red;
     text-align: center;
+    margin: auto; 
 }
 .selectTitleHero{
+    margin: auto;
     text-align: center;
     width:150px;
-    border: 1px solid red;
 }
 .card {
     width: 100px;
@@ -23,28 +24,14 @@
 }
 
 .selectedHero {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    justify-content: center;
 }
 .enterFight {
     display: flex;
     justify-content:center;
     align-items: center;
 }
-.Cards{
-    background-color: blue;
-    border: solid ;
-    border-color: black;
-    width: 150px;
-    height: 300px;
-    text-align: center;
-    margin: 20px;
-}
-img {
-    width:60px ;
-    height: 60px;
-}
-
 .cardbutton {
     display: flex;
 }

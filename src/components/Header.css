@@ -5,6 +5,9 @@
     text-align: center;
 }
 
-h1 , h2 {
-    color:salmon
+.HeaderTitle {
+    color: rgb(202, 38, 20);
+    opacity: 100%;
+    font-weight: bold;
+    font-size: 2rem;
 }

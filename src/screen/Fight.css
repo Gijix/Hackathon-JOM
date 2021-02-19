@@ -1,5 +1,10 @@
+.fullPage {
+    background-color:pink;
+}
+
 .titleFight{
     text-align: center;
+    margin-top: 0%;
 }
 .positionArea {
     display:flex;

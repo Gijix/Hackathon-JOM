@@ -1,17 +1,50 @@
 .Cards{
-    background-color: blue;
+    /* display: flex; */
+    background-color: rgb(170, 170, 230);
     border: solid ;
     border-color: black;
-    width: 150px;
-    height: 300px;
+    width: 200px;
+    height: 350px;
     text-align: center;
     margin: 20px;
+    border-radius: 5px;
+    box-shadow: 10px 5px 5px gray;
 }
 img {
-    width:60px ;
-    height: 60px;
+    width:100px;
+    height: 150px;
+    border-radius: 20px;
 }
-
 .cardbutton {
     display: flex;
+    justify-content: center;
+}
+.PShow{
+    visibility: visible ;
+}
+.PHide{
+    visibility: hidden;
+}
+
+.titreperso {
+    font-size: 18px;
+}
+
+.nonbinary {
+    font-size: 13px;
+    margin-bottom: 0px;
+    color: black;
+    font-weight: bold;
+}
+
+.buttonAdd {
+    background-color: lightcyan;
+    font-weight: bold;
+} 
+
+.cardDefense {
+    
+}
+.counterDef {
+    align-items: center;
 }

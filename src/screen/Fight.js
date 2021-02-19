@@ -1,46 +1,57 @@
 import React from 'react'
+import axios from 'axios'
 import { Link } from "react-router-dom";
+
+import CardDefense from '../components/CardDefense'
+import CardsWArea from '../components/CardsWArea'
+import CardsInFight from "../components/CardsInFight"
+
 import './Fight.css'
-import CardsSelected from '../components/CardsSelected'
-import CardsFightSelected from '../components/CardsFightSelected'
 
 export default class Fight extends React.Component { 
     state = {
         cardFight: [],
-        loading: true,
+        loading: false,
+        cardFightId: [],
+        characters: [],
+        characterDef:{},
     };
-    componentDidMount() {
-        this.setState({cardFight: this.props , loading: false})
-        // setTimeout(() => {
-        //   this.setState({loading: false})  
-        // }, 1000);
+
+    componentDidMount = async () => {
+        const item = Math.floor(Math.random()*this.props.location.data.tab10.length)
+        const cardDef = this.props.location.data.tab10[item]
+        
+        await this.setState({characterDef: cardDef, loading: true})
     }
     
-    
-    render (){
-        const {cardFight} = this.state
-       // console.log(this.props.location.data.cardId.name[0])
+    addPlayerAttack = (id) => {
+        const newCards = this.props.location.data.cardId.filter(card => (card.id === id ))
+        this.setState({cardFightId: newCards})
 
+    }
+    
+    render () {
+        const {characters, characterDef} = this.state
+
+  
     return this.state.loading ? (
-        <div>Loading</div>
-    )
-    :
-    (
-        <div>
+        <div className='fullPage'>
             <h1 className='titleFight'>
                 Fight
             </h1>
             <div className='positionArea'>
                 <div className='fightArea'>
-                    <div className='cardAttack'>
-                        Carte Attack
-                    </div>
+                    
+                    {
+          	            this.state.cardFightId.map((card)=> <CardsInFight {...card} key={card.id}/>)
+          	        }
+                    
                     <div className='VS'>
                         Attack VS Defense
                     </div>
-                    <div className='cardDefense'>
-                        Carte Defense
-                    </div>
+                    
+                      < CardDefense {...characterDef}/>
+                    
                 </div>
             </div>
             <div className='PareaCardButton'>
@@ -52,9 +63,12 @@ export default class Fight extends React.Component {
                     </div>
                     <div className='fightHero'>
                         {
-                        this.props.location.data.cardId.map((card)=> <CardsFightSelected {...card} key={card.id}/>)
+                        this.props.location.data.cardId.map((card)=> <CardsWArea 
+                            {...card} 
+                            key={card.id}
+                            addClickArenaHandler = {this.addPlayerAttack.bind(this, card.id)}/>)
                         }
-                    </div>    
+                    </div>   
                     <div className='backButton'>
                         <Link to='/selectteam'>
                             <button>Back</button>
@@ -63,7 +77,7 @@ export default class Fight extends React.Component {
                 </div>
             </div>
         </div>    
-        )
+        ) : <div>'loading ... '</div>
     }
 
 }

@@ -10,7 +10,7 @@ export default function Home() {
         <div>
             <Link to='/selectteam'>
                 <div className='enterSelect'>
-                    <button>Fuck ME !!!</button>
+                    <button className="Fuckme">Fuck ME !!!</button>
                 </div>
            </Link>
         </div>

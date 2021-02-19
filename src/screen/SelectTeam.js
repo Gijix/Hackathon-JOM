@@ -9,9 +9,7 @@ import quotes from '../Quotes.json'
 import CardsSelected from '../components/CardsSelected'
 
 import './SelectTeam.css';
-
    
-
 export default class SelectTeam extends React.Component{
     state = {
         characters: [],
@@ -19,8 +17,8 @@ export default class SelectTeam extends React.Component{
     };
     
     componentDidMount() {
-        axios
-        .get("https://miadil.github.io/starwars-api/api/all.json")
+      axios
+    		.get("https://miadil.github.io/starwars-api/api/all.json")
         .then((res) => this.setState({ characters: res.data }));
     }
 
@@ -28,8 +26,7 @@ export default class SelectTeam extends React.Component{
         const newCards = this.state.characters.filter(card => (card.id === id ))
         this.setState({cardId: newCards})
     }
-    
-    render(){
+    render() {
         const { characters } = this.state
         const tab10 = []
         characters.map(character => quotes.map(quote => character.id === quote.id ? (
@@ -43,18 +40,18 @@ export default class SelectTeam extends React.Component{
           <div>
           	<div className='fullPage' >
           	  <div className="titleSelect">
-          	      Choose your hero
+          	      <h1>Choose your hero</h1>
           	  </div>
           	  <div className='selectHero'>
           	    {
           	      tab10.map(card =>
-          	      <Cards {...card} 
-          	      key={card.id} 
+          	      <Cards {...card}
+          	      key={card.id}
           	      addClickHandler = {this.addOnClick.bind(this, card.id)}/>)
           	     }
           	  </div>
           	  <div className='selectTitleHero'>
-          	      Your Hero
+          	      <h1>Your Hero</h1>
           	  </div>
           	  <div className='selectedHero'>
           	    <div>
@@ -66,10 +63,11 @@ export default class SelectTeam extends React.Component{
           	  </div>
           	  <div className='enterFight'>
           	    <Link to={{
-						pathname: '/fight',
-							data: {
-							cardId: this.state.cardId
-							}
+									pathname: '/fight',
+									data: {
+										cardId: this.state.cardId,
+										tab10: tab10
+									}
 								}
 								}>
           	      <button>Time to fight</button>
